@@ -1,0 +1,31 @@
+{
+  "name": "hotel-reservation-frontend",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^6.4.0",
+    "@fortawesome/fontawesome-svg-core": "^6.4.0",
+    "@fortawesome/free-brands-svg-icons": "^6.4.0",
+    "@fortawesome/free-solid-svg-icons": "^6.4.0",
+    "@fortawesome/vue-fontawesome": "^3.0.3",
+    "@popperjs/core": "^2.11.7",
+    "axios": "^1.4.0",
+    "bootstrap": "^5.2.3",
+    "bootstrap-vue": "^2.23.1",
+    "sweetalert2": "^11.7.5",
+    "vue": "^3.3.2",
+    "vue-axios": "^3.5.2",
+    "vue-eva-icons": "^1.1.1",
+    "vue-router": "^4.2.0",
+    "vue3-icon": "^2.1.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^4.2.3",
+    "vite": "^4.3.5"
+  }
+}
