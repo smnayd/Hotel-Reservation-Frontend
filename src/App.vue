@@ -18,9 +18,9 @@ export default{
   }
   </script> 
   
-  <!-- <style>
+ <style>
     #app{
       background-image: url("./assets/background.jpg");
       background-size: 100%;
     }
-  </style> -->
+  </style> 
