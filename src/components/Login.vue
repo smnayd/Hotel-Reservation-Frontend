@@ -5,7 +5,7 @@
                 <h3 style="font-style: italic" >Login Page</h3>
 
                     <label for="email" style="font-style: italic"><b>Email</b></label>
-                    <input v-model="user.email" ref="username" type="text" placeholder="Enter email"  name="email" style="font-style: italic"/>
+                    <input v-model="user.email" ref="email" type="text" placeholder="Enter email"  name="email" style="font-style: italic"/>
             
                     <label for="pwd" style="font-style: italic"><b>Password</b></label>
                     <input v-model="user.password" ref="psw" type="password" placeholder="Enter password" name="pwd" style="font-style: italic"/>
@@ -58,6 +58,7 @@ export default{
             }
         },
         checkValidation(){
+            
             if(!this.user.email){
                 this.$refs.email.focus();
                 Swal.fire("Give email!");
@@ -66,6 +67,11 @@ export default{
             if(!this.user.password){
                 this.$refs.psw.focus();
                 Swal.fire("Give password!");
+                return;
+            }
+            if(!(/\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*/).test(this.user.email)){
+                this.$refs.email.focus();
+                Swal.fire("Give a correct email!");
                 return;
             }
             return true;
