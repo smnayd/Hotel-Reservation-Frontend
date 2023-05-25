@@ -3,6 +3,11 @@ import Login from '../components/Login.vue'
 import Register from '../components/Register.vue'
 import Hotel from '../components/Hotel.vue'
 import AddHotel from '../components/AddHotel.vue'
+import Admin from '../components/Admin.vue'
+import UpdateHotel from '../components/UpdateHotel.vue'
+import DeleteHotel from '../components/DeleteHotel.vue'
+import Rooms from '../components/Room.vue'
+
 
 const Home = () => import('../views/HomeView.vue')
 const About = () => import('../views/AboutView.vue')
@@ -39,9 +44,28 @@ const router = createRouter({
       path: '/addHotel',
       name: 'AddHotel',
       component: AddHotel
+    },
+    {
+      path: '/admin',
+      name: 'Admin',
+      component: Admin
+    },
+    {
+      path: '/updateHotel',
+      name: 'UpdateHotel',
+      component: UpdateHotel
+    },
+    {
+      path: '/deleteHotel/:id',
+      name: 'DeleteHotel',
+      component: DeleteHotel
+    },
+    {
+      path: '/rooms/:hotelId',
+      name: 'Rooms',
+      component: Rooms
     }
   ]
 });
-
 
 export default router;

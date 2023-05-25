@@ -43,9 +43,8 @@ export default {
       this.isNavOpen = !this.isNavOpen;
     },
     logout() {
-      // Oturumu kapatma işlemleri burada yapılır
-      // Örneğin, kullanıcıyı anasayfaya yönlendirebilirsiniz:
-      this.$router.push('/');
+   
+      this.$router.push('/login');
     }
   }
 }

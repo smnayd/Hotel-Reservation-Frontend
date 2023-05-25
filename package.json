@@ -17,6 +17,7 @@
     "axios": "^1.4.0",
     "bootstrap": "^5.2.3",
     "bootstrap-vue": "^2.23.1",
+    "country-json": "^1.1.4",
     "sweetalert2": "^11.7.5",
     "vue": "^3.3.2",
     "vue-axios": "^3.5.2",

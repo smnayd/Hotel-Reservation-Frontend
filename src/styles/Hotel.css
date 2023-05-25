@@ -37,23 +37,24 @@
   .button:hover{
     background-color: rgb(149, 232, 163);
   }
-  .create{
+  .modify{
     background-color: rgb(46, 136, 82);
-    width: 10%;
+    width: 6%;
     color: rgb(254, 254, 254);
     border: 2px black; 
     border-radius: 30px;       
-    padding: 15px 35px;    
+    padding: 15px 3px;    
     text-align: center;    
     text-decoration: none;    
     display: inline-block;    
     font-size: 18px;  
     font-style: italic;
     margin-top: 30px;
-    margin-left: 130px;
+    margin-left: 140px;
+    margin-right: -120px;
     cursor: pointer;
     transition-duration: 0.3s;
   }
-  .create:hover{
+  .modify:hover{
     background-color: rgb(149, 232, 163);
   }

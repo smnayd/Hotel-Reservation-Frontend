@@ -25,7 +25,7 @@
                 <div v-if="showModal" class="modal">
                     <div class="modal-content">
                       <h2>Terms & Privacy</h2>
-                      <!-- Terms & Privacy content goes here -->
+                      
                         <p> User Responsibilities </p>
                         <p>                        
                         1.1. User Account: User must create a valid account to access and use the Services. User agrees to provide accurate and complete information during the registration process. </p>
