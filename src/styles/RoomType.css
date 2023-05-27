@@ -1,0 +1,27 @@
+
+.room-container {
+  display:grid;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+.hotel-card {
+  background-color: rgb(167, 163, 163);
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 300px;
+  margin-right: 20px;
+  margin-bottom: 20px;
+}
+
+.room-card {
+  background-color: rgb(167, 163, 163);
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 300px;
+  margin-top: 20px;
+  margin-left: 800px;
+}

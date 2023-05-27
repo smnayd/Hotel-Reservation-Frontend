@@ -1,6 +1,25 @@
 <template>
   <div>
-    <h1 style="margin-left:750px; font-style:italic; margin-top:30px;">Hotels</h1>
+    <div class="search-form">
+      <div class="form-item">
+        <label for="input-checkin">Check In</label>
+        <input type="date" id="input-checkin" name="checkin" required>
+      </div>
+      <div class="form-item">
+        <label for="input-checkout">Check Out</label>
+        <input type="date" id="input-checkout" name="checkout" required>
+      </div>
+      <div class="form-item">
+        <label for="input-guests">Guest</label>
+        <select id="input-guests" name="guests" required>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+        </select>
+      </div>
+      <button class="search-button" @click="searchHotel()">Search</button>
+    </div>
     <div class="hotel-container">
       <div v-for="(hotel, index) in hotels" :key="hotel.id" class="hotel-item">
         <div class="hotel-card">
@@ -14,7 +33,7 @@
             <span class="star" v-for="n in hotel.rating" :key="n" style="color:gold;">&#9733;</span>
           </div>
           <img :src="getHotelImageUrl(hotel.image)" alt="Hotel Image" />
-          <button class="button" @click="handleClick(hotel.id)">Click</button>
+          <button class="button" @click="handleClick(hotel.id)">Select</button>
         </div>
       </div>
     </div>
@@ -22,7 +41,7 @@
 </template>
 
 <script>
-
+import Swal from 'sweetalert2';
 export default {
   data() {
     return {
@@ -33,6 +52,29 @@ export default {
     this.getAllHotels();
   },
   methods: {
+    searchHotel() {
+      const checkin = document.getElementById('input-checkin').value;
+      const checkout = document.getElementById('input-checkout').value;
+      const guests = document.getElementById('input-guests').value;
+      const params = new URLSearchParams();
+      params.append('dateIn', checkin);
+      params.append('dateOut', checkout);
+      params.append('guestCount', guests);
+
+      this.$ajax
+        .get('/hotels/search', { params: params })
+        .then(response => {
+          this.hotels = response.data;
+          
+        })
+        .catch(error => {
+        Swal.fire({
+        icon: 'error',
+        title: 'Search Mistake',
+        text: 'Be careful at check-in check-out date!',
+      });
+        });
+    },
     getAllHotels() {
       this.$ajax
         .get('/hotels')
@@ -41,13 +83,14 @@ export default {
         })
         .catch(error => {
           console.log(error);
+
         });
     },
     getHotelImageUrl(image) {
       return `http://localhost:8080/hotels/images/${image}`;
     },
     handleClick(hotelId) {
-      this.$router.push("/rooms/" + hotelId);
+      this.$router.push(`/roomtypes/hotel/${hotelId}`);
     }
   },
 };
