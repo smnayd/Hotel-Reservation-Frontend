@@ -7,7 +7,7 @@ import Admin from '../components/Admin.vue'
 import UpdateHotel from '../components/UpdateHotel.vue'
 import DeleteHotel from '../components/DeleteHotel.vue'
 import RoomType from '../components/RoomType.vue'
-
+import Reservation from '../components/Reservation.vue'
 
 const Home = () => import('../views/HomeView.vue')
 const About = () => import('../views/AboutView.vue')
@@ -64,6 +64,11 @@ const router = createRouter({
       path: '/roomtypes/hotel/:id',
       name: 'RoomType',
       component: RoomType
+    },
+    {
+      path: '/reservation/:hotelId/:roomTypeId',
+      name: 'Reservation',
+      component: Reservation
     }
   ]
 });
