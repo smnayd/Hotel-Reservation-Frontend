@@ -1,13 +1,14 @@
 <template>
   <div id="app">
     <Navbar />
-  </div>
+  </div>  
   <RouterView />
 </template>
   
 <script>
 import Navbar from '@/components/Navbar.vue';
 import { RouterView } from 'vue-router';
+
 export default{
     components:{RouterView, Navbar},
     setup(){
@@ -20,7 +21,7 @@ export default{
   
  <style>
     #app{
-      background-image: url("./assets/background.jpg");
+      background-image: url("./assets/image.jpg");
       background-size: 100%;
     }
   </style> 

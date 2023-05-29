@@ -18,13 +18,7 @@
           <li class="nav-item">
             <router-link to="/hotels" class="nav-link">Hotels</router-link>
           </li>
-          <li class="nav-item">
-            <router-link to="/about" class="nav-link">About</router-link>
-          </li>
         </ul>
-        <div class="position-absolute top-10 end-0">
-          <button class="btn btn-outline-light" @click="logout">Logout</button>
-        </div>
         
       </div>
     </div>
@@ -42,10 +36,6 @@ export default {
     toggleNav() {
       this.isNavOpen = !this.isNavOpen;
     },
-    logout() {
-   
-      this.$router.push('/login');
-    }
   }
 }
 </script>

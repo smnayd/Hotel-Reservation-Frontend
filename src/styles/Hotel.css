@@ -5,6 +5,9 @@
   max-width: 500px;
   margin: 0 auto;
   margin-top: 30px;
+  font-style: italic;
+  font-size: 20px;
+  color: #d5d1cb;
 }
 
 .form-item {
@@ -25,7 +28,7 @@ select {
 }
 
 .search-button {
-  background-color: rgb(46, 136, 82);
+  background-color: rgb(125, 93, 42);
   color: #fff;
   border: none;
   border-radius: 20px;
@@ -36,7 +39,7 @@ select {
 }
 
 .search-button:hover {
-  background-color: rgb(149, 232, 163);
+  background-color: rgb(237, 209, 156);
 }
 
 .hotel-container {
@@ -52,7 +55,7 @@ select {
   }
   
   .hotel-card {
-    background-color: rgb(167, 163, 163);
+    background-color: rgb(207, 189, 167);
     padding: 30px;
     border-radius: 20px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -61,7 +64,7 @@ select {
     margin-top:70px;
   }
   .button{
-    background-color: rgb(46, 136, 82);
+    background-color: rgb(125, 93, 42);
     width: 25%;
     color: rgb(254, 254, 254);
     border: 2px black; 
@@ -77,10 +80,10 @@ select {
     transition-duration: 0.3s;
   }
   .button:hover{
-    background-color: rgb(149, 232, 163);
+    background-color: rgb(237, 209, 156);
   }
   .modify{
-    background-color: rgb(46, 136, 82);
+    background-color: rgb(125, 93, 42);
     width: 6%;
     color: rgb(254, 254, 254);
     border: 2px black; 
@@ -98,5 +101,5 @@ select {
     transition-duration: 0.3s;
   }
   .modify:hover{
-    background-color: rgb(149, 232, 163);
+    background-color: rgb(237, 209, 156);
   }
