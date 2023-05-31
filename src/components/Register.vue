@@ -46,10 +46,10 @@
                             Privacy
                         </p>
                         <p>
-                            4.1. Data Collection: User acknowledges and agrees that the Company may collect and use personal data in accordance with its Privacy Policy. User's personal information will be handled securely and in compliance with applicable privacy laws.
+                            3.1. Data Collection: User acknowledges and agrees that the Company may collect and use personal data in accordance with its Privacy Policy. User's personal information will be handled securely and in compliance with applicable privacy laws.
                         </p>                                              
                         <p>                    
-                        4.2. Cookies: The Services may use cookies to enhance the user experience. User can manage cookie preferences through their browser settings.</p>
+                            3.2. Cookies: The Services may use cookies to enhance the user experience. User can manage cookie preferences through their browser settings.</p>
     
                       <button class="accept" @click="acceptTerms">Accept</button>
                     </div>
@@ -75,7 +75,7 @@ export default{
                 lname:"",
                 email:"",
                 password:"",
-                email: ""
+                phone: ""
             },
             showModal:false
         }

@@ -3,15 +3,15 @@
     <div class="search-form">
       <div class="form-item">
         <label for="input-checkin">Check In</label>
-        <input type="date" id="input-checkin" name="checkin" required>
+        <input ref="checkinInput" type="date" id="input-checkin" name="checkin" required>
       </div>
       <div class="form-item">
         <label for="input-checkout">Check Out</label>
-        <input type="date" id="input-checkout" name="checkout" required>
+        <input ref="checkoutInput" type="date" id="input-checkout" name="checkout" required>
       </div>
       <div class="form-item">
         <label for="input-guests">Guest</label>
-        <select id="input-guests" name="guests" required>
+        <select ref="guestsInput" id="input-guests" name="guests" required>
           <option value="1">1</option>
           <option value="2">2</option>
           <option value="3">3</option>
@@ -53,9 +53,9 @@ export default {
   },
   methods: {
     searchHotel() {
-      const checkin = document.getElementById('input-checkin').value;
-      const checkout = document.getElementById('input-checkout').value;
-      const guests = document.getElementById('input-guests').value;
+      const checkin = this.$refs.checkinInput.value;
+      const checkout = this.$refs.checkoutInput.value;
+      const guests = this.$refs.guestsInput.value;
       const params = new URLSearchParams();
       params.append('dateIn', checkin);
       params.append('dateOut', checkout);

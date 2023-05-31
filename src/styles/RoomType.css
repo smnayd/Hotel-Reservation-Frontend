@@ -11,7 +11,7 @@
 }
 
 .hotel-card {
-  background-color: rgb(167, 163, 163);
+  background-color: rgb(207, 189, 167);
   padding: 30px;
   border-radius: 20px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -21,7 +21,7 @@
 }
 
 .room-card {
-  background-color: rgb(167, 163, 163);
+  background-color: rgb(207, 189, 167);
   padding: 30px;
   border-radius: 20px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -30,35 +30,7 @@
   margin-top:70px;
 }
 
-.room-card h3 {
-  margin-top: 0;
-}
 
-.room-card p {
-  margin-bottom: 10px;
-}
-
-.room-card img {
-  width: 100%;
-  margin-top: 10px;
-  border-radius: 4px;
-}
-
-.room-card .buttons-container {
-  display: flex;
-  justify-content: center;
-  margin-top: 20px;
-}
-
-.room-card .button {
-  margin: 0 10px;
-  padding: 10px 20px;
-  background-color: #007bff;
-  color: #ffffff;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
 
 
 .pagination {
@@ -75,7 +47,7 @@
   border-radius: 50%;
   background-color: #cccccc;
   cursor: pointer;
-  margin-top: -440px;
+  margin-top: -460px;
 }
 
 .pagination .dot.active {
@@ -83,7 +55,7 @@
 }
 
 .reservation{
-  background-color: rgb(46, 136, 82);
+  background-color: rgb(125, 93, 42);
   width: 55%;
   color: rgb(254, 254, 254);
   border: 2px black; 
@@ -94,12 +66,12 @@
   display: inline-block;    
   font-size: 18px;  
   font-style: italic;
-  margin: 35px 100px;    
+  margin: 35px 90px;    
   cursor: pointer;
   transition-duration: 0.3s;
 }
 .reservation:hover{
-  background-color: rgb(149, 232, 163);
+  background-color: rgb(237, 209, 156);
 }
 .button {
   padding: 0;
@@ -119,12 +91,12 @@
 }
 
 .button.prev::before {
-  content: '\2039'; /* Sol ok sembolü */
+  content: '\2039'; 
   margin-left: -970px;
 }
 
 .button.next::after {
-  content: '\203A'; /* Sağ ok sembolü */
+  content: '\203A'; 
   margin-left: -30px;
 }
 

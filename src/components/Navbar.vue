@@ -19,27 +19,62 @@
             <router-link to="/hotels" class="nav-link">Hotels</router-link>
           </li>
         </ul>
-        
+
+        <ul class="navbar-nav ml-auto">
+          <li v-if="isLoggedIn()" class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="profileDropdown" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              <i class="fas fa-user"></i>
+            </a>
+            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="profileDropdown">
+              <h6 class="dropdown-header">Profile</h6>
+              <router-link :to="'/users/' + getUserId()" class="dropdown-item">View Profile</router-link>
+              <a class="dropdown-item" href="#" @click="logout()">Logout</a>
+            </div>
+          </li>
+        </ul>
       </div>
     </div>
   </nav>
 </template>
 
+
 <script>
+import Swal from 'sweetalert2';
+
 export default {
   data() {
     return {
       isNavOpen: false
     };
   },
-  methods: {
+ methods: {
     toggleNav() {
       this.isNavOpen = !this.isNavOpen;
     },
+    isLoggedIn() {
+      const user = localStorage.getItem('user');
+      return !!user; 
+    },
+    getUserId() {
+  const user = JSON.parse(localStorage.getItem('user'));
+  console.log(JSON.parse(localStorage.getItem('user')));
+
+    return user.id;
+ 
+},
+
+    logout() {
+      localStorage.removeItem('user');
+      Swal.fire({
+        icon:'success',
+        text: 'Logged out successfully!'
+      });
+      this.$router.push("/login");
+    }
   }
 }
 </script>
-
 
 <style>
 @import '../styles/Navbar.css';

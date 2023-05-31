@@ -45,6 +45,7 @@
                 this.user.password = "";
               } else if (response) {
                 localStorage.setItem('user', JSON.stringify(response.data));
+                console.log(JSON.stringify(this.user));
                 if (this.user.email === 'sm.ayd02@gmail.com') {
                   this.$router.push("/admin");
                 } else {

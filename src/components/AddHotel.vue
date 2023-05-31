@@ -1,8 +1,8 @@
 <template>
-  <div class="container">
+  <div class="container" style="margin-top:10px;">
     <div class="card">
       <div class="card-body">
-        <h3 style="font-style: italic">Add Hotel</h3>
+        <h3 style="font-style: italic;" >Add Hotel</h3>
         <p style="font-style: italic">Please fill all the fields to create a hotel.</p>
 
         <label for="hotelName" style="font-style: italic"><b>Hotel Name</b></label>

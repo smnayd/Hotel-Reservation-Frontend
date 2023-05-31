@@ -1,6 +1,5 @@
 <template>
     <div>
-      <h1 style="margin-left:750px; font-style:italic; margin-top:30px;">Hotels</h1>
       <div class="hotel-container">
         <div v-for="(hotel, index) in hotels" :key="hotel.id" class="hotel-item">
           <div class="hotel-card">
