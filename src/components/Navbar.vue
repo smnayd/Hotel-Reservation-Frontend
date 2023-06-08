@@ -29,6 +29,7 @@
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="profileDropdown">
               <h6 class="dropdown-header">Profile</h6>
               <router-link :to="'/users/' + getUserId()" class="dropdown-item">View Profile</router-link>
+              <a class="dropdown-item" href="#" @click="viewReservation()">Reservations</a>
               <a class="dropdown-item" href="#" @click="logout()">Logout</a>
             </div>
           </li>
@@ -41,14 +42,18 @@
 
 <script>
 import Swal from 'sweetalert2';
-
+import { useRouter } from 'vue-router';
 export default {
+  setup() {
+    const router = useRouter();
+    return { router };
+  },
   data() {
     return {
       isNavOpen: false
     };
   },
- methods: {
+  methods: {
     toggleNav() {
       this.isNavOpen = !this.isNavOpen;
     },
@@ -57,12 +62,9 @@ export default {
       return !!user; 
     },
     getUserId() {
-  const user = JSON.parse(localStorage.getItem('user'));
-  console.log(JSON.parse(localStorage.getItem('user')));
-
-    return user.id;
- 
-},
+      const userId = JSON.parse(localStorage.getItem('userId'));
+      return userId;
+    },
 
     logout() {
       localStorage.removeItem('user');
@@ -70,8 +72,21 @@ export default {
         icon:'success',
         text: 'Logged out successfully!'
       });
-      this.$router.push("/login");
+      this.router.push("/login");
+    },
+    viewReservation() {
+    if (this.isLoggedIn()) {
+      const userId = this.getUserId();
+      this.$router.push(`/reservations/view/${userId}`);
+    } else {
+      Swal.fire({
+        icon: 'info',
+        title: 'Information',
+        text: 'In order to see reservations, first log in!'
+      });
     }
+  }
+
   }
 }
 </script>

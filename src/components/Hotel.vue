@@ -3,7 +3,7 @@
     <div class="search-form">
       <div class="form-item">
         <label for="input-checkin">Check In</label>
-        <input ref="checkinInput" type="date" id="input-checkin" name="checkin" required>
+        <input ref="checkinInput" type="date" id="input-checkin" name="checkin" pattern="\d{4}-\d{2}-\d{2}" required>
       </div>
       <div class="form-item">
         <label for="input-checkout">Check Out</label>
@@ -54,18 +54,23 @@ export default {
   methods: {
     searchHotel() {
       const checkin = this.$refs.checkinInput.value;
-      const checkout = this.$refs.checkoutInput.value;
+      const checkout = this.$refs.checkoutInput.value;      
       const guests = this.$refs.guestsInput.value;
       const params = new URLSearchParams();
       params.append('dateIn', checkin);
       params.append('dateOut', checkout);
       params.append('guestCount', guests);
+      
 
       this.$ajax
-        .get('/hotels/search', { params: params })
+        .get('/hotels/search', { params: params, 
+          query: {
+          checkin: checkin,
+          checkout: checkout,
+          guests: guests
+        } })
         .then(response => {
           this.hotels = response.data;
-          
         })
         .catch(error => {
         Swal.fire({

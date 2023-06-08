@@ -60,7 +60,7 @@ select {
     border-radius: 20px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     width:500px;
-    margin-left: 130px;
+    margin-left: 200px;
     margin-top:70px;
   }
   .button{
@@ -95,8 +95,8 @@ select {
     font-size: 18px;  
     font-style: italic;
     margin-top: 30px;
-    margin-left: 140px;
-    margin-right: -120px;
+    margin-left: 200px;
+    margin-right: -180px;
     cursor: pointer;
     transition-duration: 0.3s;
   }

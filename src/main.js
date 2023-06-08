@@ -14,4 +14,5 @@ const instance = axios.create({
 app.config.globalProperties.$ajax = instance;
 app.use(router)
 app.use(VueAxios,axios)
+app.provide('router', router);
 app.mount('#app')

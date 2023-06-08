@@ -9,9 +9,10 @@ import DeleteHotel from '../components/DeleteHotel.vue'
 import RoomType from '../components/RoomType.vue'
 import Reservation from '../components/Reservation.vue'
 import UserProfile from '../components/UserProfile.vue'
+import ReservationView from '../components/ReservationView.vue'
+import Payment from '../components/Payment.vue'
 
 const Home = () => import('../views/HomeView.vue')
-const About = () => import('../views/AboutView.vue')
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -25,11 +26,6 @@ const router = createRouter({
       path: '/register',
       name: 'Register',
       component: Register
-    },
-    {
-      path: '/about',
-      name: 'About',
-      component: About
     },
     {
       path: '/',
@@ -69,12 +65,23 @@ const router = createRouter({
     {
       path: '/reservation/:hotelId/:roomTypeId',
       name: 'Reservation',
-      component: Reservation
+      component: Reservation,
+      props: true
     },
     {
       path: '/users/:id',
       name: 'UserProfile',
       component: UserProfile
+    },
+    {
+      path: '/reservations/view/:userId',
+      name: 'ReservationView',
+      component: ReservationView
+    },
+    {
+      path: '/payment',
+      name: 'Payment',
+      component: Payment
     }
   ]
 });

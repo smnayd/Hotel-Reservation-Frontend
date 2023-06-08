@@ -1,46 +1,44 @@
 .navbar-nav {
-  justify-content: center; /* Menü elemanlarını yatayda ortala */
+  justify-content: center; 
 }
 
 .navbar-brand {
-  margin-right: 1rem; /* Logoya sağdan boşluk ver */
-}
+  margin-right: 1rem; 
 
 .navbar-toggler {
-  border: none; /* Düğme çerçevesini kaldır */
+  border: none; 
 }
 
 .navbar-toggler-icon {
-  background-color: #000; /* Düğme simgesinin rengini ayarla */
+  background-color: #000; 
 }
 
 .navbar-toggler:focus,
 .navbar-toggler:active {
-  outline: none; /* Düğme odaklandığında veya aktif olduğunda vurguyu kaldır */
+  outline: none; 
 }
 
 @media (max-width: 761.98px) {
-  /* 992 pikselin altındaysa (tablet ve mobil cihazlar için) */
   .navbar-nav {
-    flex-direction: column; /* Menü elemanlarını dikey hizala */
+    flex-direction: column;
     width: 100%;
     text-align: center;
     margin-top: 10px;
   }
 
   .navbar-brand {
-    margin-bottom: 1rem; /* Logoya alttan boşluk ver */
+    margin-bottom: 1rem; 
   }
 
   .navbar-collapse {
-    padding-top: 1rem; /* Açılır menü içeriğine üstten boşluk ver */
+    padding-top: 1rem; 
   }
 
   .navbar-toggler {
-    margin-left: auto; /* Düğmeyi sağa hizala */
+    margin-left: auto; 
     order: -1;
     margin-left: 10px;
     margin-right: 10px;
+    }
   }
-  
 }

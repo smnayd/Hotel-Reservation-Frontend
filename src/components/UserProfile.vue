@@ -3,75 +3,70 @@
     <div class="card">
       <h1>User Profile</h1>
       <div v-if="user">
-        <p>First Name: {{ user.fname }}</p>
-        <p>Last Name: {{ user.lname }}</p>
-        <p>Email: {{ user.email }}</p>
-        <p>Phone: {{ user.phone }}</p>
+        <p>Ad: {{ user.fname }}</p>
+        <p>Soyad: {{ user.lname }}</p>
+        <p>E-posta: {{ user.email }}</p>
+        <p>Telefon: {{ user.phone }}</p>
         <div>
-          <button class="button">Update info</button>
+          <button class="button" @click="updateInfo()">Update Info</button>
         </div>
         <div>
-          <button class="button">Delete account</button>
+          <button class="button" @click="confirmDeleteAccount()">Delete Account</button>
         </div>
       </div>
       <div v-else>
-        <p>No user profile found.</p>
+        <p>No user found.</p>
       </div>
     </div>
   </div>
+</template>
 
-  </template>
-  
-  <script>
-  export default {
-    data() {
-      return {
-        user: null
-      };
-    },
-    mounted() {
-      const storedUser = localStorage.getItem('user');
-      if (storedUser) {
-        this.user = JSON.parse(storedUser);
-      }
+<script>
+export default {
+  data() {
+    return {
+      user: null
+    };
+  },
+  mounted() {
+    const storedUser = localStorage.getItem('user');
+    if (storedUser) {
+      this.user = JSON.parse(storedUser);
     }
-  };
-  </script>
-  
-  <style scoped>
-  .container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+  },
+  methods: {
+    updateInfo() {
+  const updatedUser = { ...this.user };
+  if (confirm("Do you want to update your first name?")) {
+    updatedUser.fname = prompt("New first name:", updatedUser.fname);
   }
-  
-  .card {
-    background-color: rgb(207, 189, 167);
-    padding: 30px;
-    border-radius: 20px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    width: 500px;
-    text-align: center;
+  if (confirm("Do you want to update your last name?")) {
+    updatedUser.lname = prompt("New last name:", updatedUser.lname);
   }
-  .button{
-    background-color: rgb(125, 93, 42);
-    width: 45%;
-    color: rgb(254, 254, 254);
-    border: 2px black; 
-    border-radius: 30px;       
-    padding: 15px 35px;    
-    text-align: center;    
-    text-decoration: none;    
-    display: inline-block;    
-    font-size: 18px;  
-    font-style: italic;
-    margin: 5px 100px;    
-    cursor: pointer;
-    transition-duration: 0.3s;
+  if (confirm("Do you want to update e-mail?")) {
+    updatedUser.email = prompt("New e-mail:", updatedUser.email);
   }
-  .button:hover{
-    background-color: rgb(237, 209, 156);
+  if (confirm("Do you want to update phone?")) {
+    updatedUser.phone = prompt("New phone:", updatedUser.phone);
   }
-  </style>
-  
+
+  this.user = updatedUser;
+
+  localStorage.setItem("user", JSON.stringify(this.user));
+ },
+    confirmDeleteAccount() {
+      if (confirm("Are you sure to delete your account?")) {
+        this.deleteAccount();
+      }
+    },
+    deleteAccount() {
+      this.user = null;
+      localStorage.removeItem('user');
+    }
+  }
+};
+</script>
+
+<style scoped>
+@import '../styles/UserProfile.css';
+</style>

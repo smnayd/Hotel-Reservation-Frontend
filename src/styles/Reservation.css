@@ -1,0 +1,52 @@
+.reservation-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.reservation-card {
+  background-color: rgb(207, 189, 167);
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 500px;
+  text-align: center;
+}
+
+.reservation-button {
+  background-color: rgb(125, 93, 42);
+  width: 55%;
+  color: rgb(254, 254, 254);
+  border: 2px;
+  border-radius: 30px;
+  padding: 15px 35px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 18px;
+  font-style: italic;
+  margin: 5px 120px;
+  cursor: pointer;
+  transition-duration: 0.3s;
+}
+
+.reservation-button:hover {
+  background-color: rgb(237, 209, 156);
+}
+input[type=date],[type=date], [type=text], input[type=email], input[type=tel]{
+  width: 30%;
+  padding: 5px;
+  margin-left: 30px;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+input[type=text]:focus, input[type=email]:focus, input[type=tel]:focus{
+  background-color: #ddd;
+  outline: none;
+}
+
+.form-item {
+  margin-bottom: 20px;
+}

@@ -86,7 +86,6 @@ export default {
         .get(`/roomtypes/hotel/${hotelId}`)
         .then(response => {
           this.roomtypes = response.data;
-          console.log(response);
         })
         .catch(error => {
           console.log(error);

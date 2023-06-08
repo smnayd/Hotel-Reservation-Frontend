@@ -2,38 +2,40 @@
   <div class="container" style="margin-top:10px;">
     <div class="card">
       <div class="card-body">
-        <h3 style="font-style: italic;" >Add Hotel</h3>
-        <p style="font-style: italic">Please fill all the fields to create a hotel.</p>
+        <i>
+        <h3>Add Hotel</h3>
+        <p >Please fill all the fields to create a hotel.</p>
 
         <label for="hotelName" style="font-style: italic"><b>Hotel Name</b></label>
         <input v-model="hotel.hotelName" ref="hotelName" type="text" placeholder="Enter Hotel Name" name="hotelName" style="font-style: italic"/>
 
-        <label for="country" style="font-style: italic"><b>Country</b></label><br>
+        <label for="country"><b>Country</b></label><br>
         <select v-model="hotel.country" style="width:150px; margin-top:10px;">
           <option v-for="country in countries" :value="country" :key="country">
             {{ country }}
           </option>
         </select>
         <br><br>
-        <label for="city" style="font-style: italic"><b>City</b></label>
+        <label for="city"><b>City</b></label>
         <input v-model="hotel.city" ref="city" type="text" placeholder="Enter City" name="city" style="font-style: italic"/>
 
-        <label for="address" style="font-style: italic"><b>Address</b></label>
+        <label for="address"><b>Address</b></label>
         <input v-model="hotel.address" ref="address" type="text" placeholder="Enter Address" name="address" style="font-style: italic"/>
 
-        <label for="phone" style="font-style: italic"><b>Phone</b></label>
+        <label for="phone"><b>Phone</b></label>
         <input v-model="hotel.phone" ref="phone" type="text" placeholder="Enter Phone" name="phone" style="font-style: italic"/>
 
-        <label for="rating" style="font-style: italic"><b>Rating</b></label><br>
+        <label for="rating"><b>Rating</b></label><br>
         <input v-model="hotel.rating" ref="rating" type="number" placeholder="Enter Rating" name="rating" style="font-style: italic; width: 30%" max="5" min="1"/>
 
         <br><br>
-        <label for="image" style="font-style: italic"><b>Image</b></label>
+        <label for="image"><b>Image</b></label>
         <input v-model="hotel.image" ref="image" type="text" placeholder="Enter Image" name="image" style="font-style: italic"/>
 
         <div class="clearfix">
           <button class="button" @click="add()">Add</button>
         </div>
+      </i>
       </div>
     </div>
   </div>
